@@ -1,0 +1,5 @@
+<nav class="navbar navbar-dark bg-primary" style="background-color: #e3f2fd;">
+    <span class="navbar-brand mb-0 h1">Coppel: Validación de comentarios</span>
+    <span class="navbar-brand mb-0 h1" *ngIf="local.getItem('usuarioLogueado') !==null">Bienvenido: {{local.getItem('usuarioLogueado')}}</span>
+    <button class="btn btn-dark" (click)='logOut()'>Cerrar Sesión</button>
+</nav>

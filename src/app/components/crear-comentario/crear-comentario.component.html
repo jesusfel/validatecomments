@@ -1,0 +1,37 @@
+<div class="container pt-4">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card ">
+                <div class="card-body">
+                    <h3>Crear Comentario
+                        <div *ngIf="loading" class="spinner-border float-right" role="status">
+                            <span class="sr-only">Cargando...</span>
+                        </div>
+                    </h3>
+                    <form class="mt-4" [formGroup]="createComment" (ngSubmit)="validateComment()">
+                        <div class="row mb-2">
+                            <div class="col">
+                                <input type="text" class="form-control form-control-lg" formControlName="comment" placeholder="Comentario">
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="container containerdrop" appDnd (fileDropped)="onFileDropped($event)">
+                                <input type="file" #fileDropRef id="fileDropRef" multiple (change)="fileBrowseHandler($event.target)" />
+                                <img src="assets/ic-upload-file.svg" alt="">
+                                <h3>Arrastre los archivos aquí</h3>
+                                <h3>o</h3>
+                                <button type="text" class="btn btn-primary btn-lg">Buscar archivo</button>
+                            </div>
+                        </div>
+                        <div class="mt-3 text-right">
+                            <button type="text" class="btn btn-secondary btn-lg mr-3" routerLink="/listacomentario">Volver</button>
+                            <button type="submit" class="btn btn-primary btn-lg">Agregar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>

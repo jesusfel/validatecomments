@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "jrflprueba": {
+      "hosting": {
+        "ComentariosCoppel": [
+          "jrflprueba"
+        ]
+      }
+    }
+  }
+}

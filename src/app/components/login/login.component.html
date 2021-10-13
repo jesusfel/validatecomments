@@ -1,0 +1,36 @@
+<div class="mt-2 col-md-12 col-sm-12 col-12 card-login">
+    <div class="row col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 offset-md-4">
+        <div class="card col-xl-12 col-lg-10 col-md-8 col-sm-6 col-11 offset-xl-0 offset-md-1 offset-sm-4 offset-1 color-principal padding-card border-card-login">
+            <div class="card-body color-principal">
+                <form [formGroup]="frmLogin">
+                    <div>
+                        <img src="./assets/coppel-1.svg" class="text-center img-fluid size-img">
+                    </div>
+                    <div class="form-group">
+                        <label for="usuario" class="color-text">Usuario</label>
+                        <input type="email" formControlName="usuario" class="form-control background-inputs" id="usuario" placeholder="Usuario" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password" class="color-text">Password</label>
+                        <input type="password" class="form-control background-inputs input-box" id="password" placeholder="Password" formControlName="password" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary col-md-12" (click)="login()">Login</button>
+                </form>
+                <br>
+                <p class="color-text  text-align-center" *ngIf="showError">
+                    <small class=" text-bold">
+              {{loginMessageError}}
+            </small>
+                </p>
+                <p class="color-text  text-align-center" *ngIf="showErrorRequired">
+                    <small class=" text-bold">
+              Usuario vacio
+            </small>
+                </p>
+                <p class="color-text text-align-center text-bold" *ngIf="showErrorRequired || showError">
+                    <small class=" text-bold">Favor de volver a intentar</small>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
